@@ -1,0 +1,106 @@
+/**
+ * NavaCity design tokens - the single source of truth for the interface.
+ *
+ * Every colour, radius and spacing value used by the application comes from
+ * here (or from the matching Tailwind scale in tailwind.config.js).  The
+ * rules are deliberately few: a calm, credible transport product, not a
+ * dashboard full of decoration.
+ *
+ * Rules that the whole application follows:
+ *   * metro family  = indigo   (lines, primary actions)
+ *   * bus family    = amber    (routes, dashed on the map)
+ *   * crowd levels  = emerald / sky / orange / red, ALWAYS with a text label
+ *     and an icon shape, never colour alone
+ *   * the simulated-data banner is the same amber notice on every page
+ */
+
+:root {
+  /* ---------------------------------------------------------------- */
+  /* Brand / metro family                                              */
+  /* ---------------------------------------------------------------- */
+  --nc-metro: #1d3fbf;          /* indigo-700 */
+  --nc-metro-strong: #1e3a8a;
+  --nc-metro-soft: #eef2ff;     /* indigo-50 */
+  --nc-metro-border: #c7d2fe;
+  --nc-focus: #4f46e5;          /* indigo-600, focus ring */
+
+  /* ---------------------------------------------------------------- */
+  /* Bus family                                                       */
+  /* ---------------------------------------------------------------- */
+  --nc-bus: #b7791f;            /* amber-600 */
+  --nc-bus-strong: #92400e;
+  --nc-bus-soft: #fffbeb;       /* amber-50 */
+  --nc-bus-border: #fde68a;
+
+  /* ---------------------------------------------------------------- */
+  /* Crowd levels (always paired with a label and an icon shape)       */
+  /* ---------------------------------------------------------------- */
+  --nc-crowd-low: #0f8a5f;      /* emerald-600 */
+  --nc-crowd-low-soft: #ecfdf5;
+  --nc-crowd-moderate: #0369a1; /* sky-600 */
+  --nc-crowd-moderate-soft: #f0f9ff;
+  --nc-crowd-high: #c2410c;     /* orange-600 */
+  --nc-crowd-high-soft: #fff7ed;
+  --nc-crowd-critical: #b91c1c; /* red-700 */
+  --nc-crowd-critical-soft: #fef2f2;
+
+  /* ---------------------------------------------------------------- */
+  /* Neutrals                                                         */
+  /* ---------------------------------------------------------------- */
+  --nc-heading: #0f172a;       /* slate-900 */
+  --nc-body: #334155;          /* slate-700 */
+  --nc-muted: #64748b;         /* slate-500 */
+  --nc-border: #e2e8f0;        /* slate-200 */
+  --nc-page: #f8fafc;          /* slate-50 */
+  --nc-surface: #ffffff;
+
+  /* ---------------------------------------------------------------- */
+  /* Notice banner (simulated data)                                   */
+  /* ---------------------------------------------------------------- */
+  --nc-notice-bg: #fffbeb;      /* amber-50 */
+  --nc-notice-text: #78350f;    /* amber-900 */
+  --nc-notice-border: #fde68a;  /* amber-200 */
+
+  /* ---------------------------------------------------------------- */
+  /* Shape and spacing                                                */
+  /* ---------------------------------------------------------------- */
+  --nc-radius-card: 12px;
+  --nc-radius-control: 8px;
+  --nc-radius-badge: 999px;
+  --nc-card-padding-public: 20px;
+  --nc-card-padding-authority: 16px;
+  --nc-gap: 16px;
+  --nc-content-width: 1152px;
+  --nc-space-1: 4px;
+  --nc-space-2: 8px;
+  --nc-space-3: 12px;
+  --nc-space-4: 16px;
+  --nc-space-5: 20px;
+  --nc-space-6: 24px;
+  --nc-space-8: 32px;
+
+  /* ---------------------------------------------------------------- */
+  /* Typography                                                       */
+  /* ---------------------------------------------------------------- */
+  --nc-font-sans: ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif;
+  --nc-font-size-xs: 12px;
+  --nc-font-size-sm: 14px;
+  --nc-font-size-base: 16px;
+  --nc-font-size-lg: 18px;
+  --nc-font-size-xl: 24px;
+  --nc-font-size-2xl: 32px;
+  --nc-line-height: 1.5;
+}
+
+/* Respect the operating-system preference: no entrance animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

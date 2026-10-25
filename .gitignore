@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/dist/
+npm-debug.log*
+
+# Environment / secrets
+# ".env" holds the authority password, so it must never be committed.
+# Every ".env.*" file is ignored as well - except the documented example.
+.env
+.env.*
+!.env.example
+
+# Generated data & model artefacts
+# (the README explains how to regenerate them - they are reproducible)
+data/generated/
+data/navacity.db
+ml/artifacts/*.joblib
+ml/artifacts/*.png
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

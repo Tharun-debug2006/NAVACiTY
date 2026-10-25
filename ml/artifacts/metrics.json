@@ -1,0 +1,229 @@
+{
+  "data_notice": "SIMULATED DATA - metrics below are measured on SIMULATED NavaCity data. They are not a statement about any real transit system.",
+  "dataset": {
+    "path": "C:\\AI\\NavaCity\\data\\generated\\navacity_transport.csv",
+    "rows": 95568,
+    "date_min": "2025-01-01",
+    "date_max": "2025-06-30",
+    "routes": 24
+  },
+  "split": {
+    "strategy": "time_ordered (last 20% of dates used for testing)",
+    "test_fraction": 0.2
+  },
+  "features": {
+    "numeric": [
+      "hour",
+      "day_of_week",
+      "month_sin",
+      "month_cos",
+      "day_index",
+      "is_weekend",
+      "is_holiday",
+      "is_peak_hour",
+      "vehicle_capacity",
+      "service_frequency",
+      "hourly_capacity",
+      "segment_index",
+      "num_stops",
+      "route_popularity"
+    ],
+    "categorical": [
+      "mode",
+      "route_id",
+      "segment_id",
+      "origin_id",
+      "dest_id",
+      "day_type",
+      "weather",
+      "traffic_level",
+      "special_event"
+    ],
+    "excluded_leaky_columns": [
+      "passenger_count",
+      "occupancy_pct",
+      "crowd_level",
+      "is_overcrowded",
+      "waiting_time_min",
+      "travel_time_min"
+    ]
+  },
+  "crowd_thresholds": [
+    {
+      "level": "Low",
+      "min": 0.0,
+      "max": 0.4
+    },
+    {
+      "level": "Moderate",
+      "min": 0.4,
+      "max": 0.65
+    },
+    {
+      "level": "High",
+      "min": 0.65,
+      "max": 0.85
+    },
+    {
+      "level": "Critical",
+      "min": 0.85,
+      "max": null
+    }
+  ],
+  "modes": {
+    "metro": {
+      "best_model": "gradient_boosting",
+      "time_ordered_metrics": {
+        "mae": 223.18092250829875,
+        "rmse": 351.3520076580861,
+        "r2": 0.9443208856528859,
+        "mape": 22.93535959690115,
+        "n_samples": 6068,
+        "train_seconds": 0.79
+      },
+      "all_model_metrics": {
+        "random_forest": {
+          "mae": 246.98380005047645,
+          "rmse": 376.93717782196586,
+          "r2": 0.9359166231197522,
+          "mape": 45.573006766382136,
+          "n_samples": 6068,
+          "train_seconds": 0.91
+        },
+        "gradient_boosting": {
+          "mae": 223.18092250829875,
+          "rmse": 351.3520076580861,
+          "r2": 0.9443208856528859,
+          "mape": 22.93535959690115,
+          "n_samples": 6068,
+          "train_seconds": 0.79
+        }
+      },
+      "random_split_metrics": {
+        "mae": 223.42721119222503,
+        "rmse": 351.61322261316184,
+        "r2": 0.9440517010026797,
+        "mape": 23.081511583125984,
+        "n_samples": 4854
+      },
+      "train_rows": 23616,
+      "test_rows": 6068,
+      "test_start_date": "2025-05-25",
+      "feature_importance": {
+        "service_frequency": 0.7932281334077957,
+        "segment_index": 0.09760562926711938,
+        "route_popularity": 0.06182137754166029,
+        "hour": 0.016622790341477553,
+        "traffic_level": 0.01310178150052317,
+        "weather": 0.006520785552993732,
+        "special_event": 0.00487380760636374,
+        "is_holiday": 0.002578288712488098,
+        "segment_id": 0.0024469596841161134,
+        "route_id": 0.0005135548935848456,
+        "is_peak_hour": 0.00046523357720112035,
+        "num_stops": 0.00016122315584067896,
+        "day_type": 6.0434758835468025e-05,
+        "day_of_week": 0.0,
+        "month_sin": 0.0,
+        "month_cos": 0.0,
+        "day_index": 0.0,
+        "is_weekend": 0.0,
+        "vehicle_capacity": 0.0,
+        "hourly_capacity": 0.0,
+        "mode": 0.0,
+        "origin_id": 0.0,
+        "dest_id": 0.0
+      }
+    },
+    "bus": {
+      "best_model": "gradient_boosting",
+      "time_ordered_metrics": {
+        "mae": 16.454414288320688,
+        "rmse": 28.05207580443227,
+        "r2": 0.9538964115370353,
+        "mape": 23.26466031840843,
+        "n_samples": 13468,
+        "train_seconds": 2.23
+      },
+      "all_model_metrics": {
+        "random_forest": {
+          "mae": 19.355993496728885,
+          "rmse": 31.860327140139358,
+          "r2": 0.9405290078444879,
+          "mape": 48.47505528180977,
+          "n_samples": 13468,
+          "train_seconds": 3.09
+        },
+        "gradient_boosting": {
+          "mae": 16.454414288320688,
+          "rmse": 28.05207580443227,
+          "r2": 0.9538964115370353,
+          "mape": 23.26466031840843,
+          "n_samples": 13468,
+          "train_seconds": 2.23
+        }
+      },
+      "random_split_metrics": {
+        "mae": 16.5180959321213,
+        "rmse": 28.17332805749874,
+        "r2": 0.9535234120580017,
+        "mape": 23.249241120743314,
+        "n_samples": 10774
+      },
+      "train_rows": 52416,
+      "test_rows": 13468,
+      "test_start_date": "2025-05-25",
+      "feature_importance": {
+        "service_frequency": 0.7830480949387348,
+        "route_popularity": 0.0662585410533201,
+        "hour": 0.051033671966284326,
+        "segment_index": 0.036184546733011184,
+        "traffic_level": 0.03341924930627967,
+        "route_id": 0.00803151152120102,
+        "num_stops": 0.005635936042086782,
+        "weather": 0.003973497392904886,
+        "segment_id": 0.0030911673646699515,
+        "special_event": 0.002609059135962175,
+        "day_type": 0.0025798357452526594,
+        "is_holiday": 0.001888942935056963,
+        "is_peak_hour": 0.001680071157919541,
+        "origin_id": 0.0003879026774414326,
+        "dest_id": 0.00017797202987445562,
+        "day_of_week": 0.0,
+        "month_sin": 0.0,
+        "month_cos": 0.0,
+        "day_index": 0.0,
+        "is_weekend": 0.0,
+        "vehicle_capacity": 0.0,
+        "hourly_capacity": 0.0,
+        "mode": 0.0
+      }
+    }
+  },
+  "mean_feature_importance": {
+    "service_frequency": 0.7881381141732653,
+    "segment_index": 0.06689508800006529,
+    "route_popularity": 0.06403995929749019,
+    "hour": 0.033828231153880936,
+    "traffic_level": 0.023260515403401422,
+    "weather": 0.0052471414729493085,
+    "route_id": 0.004272533207392933,
+    "special_event": 0.0037414333711629573,
+    "num_stops": 0.0028985795989637307,
+    "segment_id": 0.0027690635243930325,
+    "is_holiday": 0.0022336158237725307,
+    "day_type": 0.0013201352520440636,
+    "is_peak_hour": 0.0010726523675603306,
+    "origin_id": 0.0001939513387207163,
+    "dest_id": 8.898601493722781e-05,
+    "day_of_week": 0.0,
+    "month_sin": 0.0,
+    "month_cos": 0.0,
+    "day_index": 0.0,
+    "is_weekend": 0.0,
+    "vehicle_capacity": 0.0,
+    "hourly_capacity": 0.0,
+    "mode": 0.0
+  },
+  "training_seconds": 12.22
+}

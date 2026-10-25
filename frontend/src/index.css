@@ -1,0 +1,124 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-slate-50 text-slate-700;
+    font-family: var(--nc-font-sans);
+    font-size: var(--nc-font-size-base);
+    line-height: var(--nc-line-height);
+  }
+  h1, h2, h3, h4 {
+    @apply font-semibold text-slate-900;
+  }
+  /* A visible focus ring everywhere.  Never removed. */
+  :focus-visible {
+    outline: 2px solid var(--nc-focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* ---------------- Cards ---------------- */
+  .card {
+    @apply rounded-card border border-slate-200 bg-white p-5 shadow-sm;
+  }
+  .card-compact {
+    @apply rounded-card border border-slate-200 bg-white p-4 shadow-sm;
+  }
+  .card-title {
+    @apply text-sm font-semibold text-slate-900;
+  }
+  .card-subtitle {
+    @apply text-xs text-slate-500;
+  }
+
+  /* ---------------- Forms ---------------- */
+  .label {
+    @apply mb-1 block text-sm font-medium text-slate-700;
+  }
+  .select {
+    @apply w-full rounded-control border border-slate-300 bg-white px-3 py-2 text-sm
+      text-slate-700 outline-none transition
+      focus:border-metro-600 focus:ring-2 focus:ring-metro-100
+      disabled:bg-slate-100 disabled:text-slate-500;
+  }
+
+  /* ---------------- Buttons ---------------- */
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-control
+      px-4 py-2 text-sm font-semibold transition
+      focus:outline-none focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-metro-600
+      disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-metro-700 text-white hover:bg-metro-800;
+  }
+  .btn-ghost {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+  .btn-bus {
+    @apply btn bg-bus-600 text-white hover:bg-bus-700;
+  }
+  .btn-sm {
+    @apply min-h-[36px] px-3 py-1.5 text-xs;
+  }
+
+  /* ---------------- Badges ---------------- */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs
+      font-semibold;
+  }
+
+  /* ---------------- Numbers ---------------- */
+  .stat-value {
+    @apply text-2xl font-semibold tabular-nums text-slate-900;
+  }
+
+  /* ---------------- Tables ---------------- */
+  .table-wrap {
+    @apply overflow-x-auto rounded-card border border-slate-200 bg-white;
+  }
+  .data-table {
+    @apply w-full border-collapse text-sm;
+  }
+  .data-table thead th {
+    @apply sticky top-0 z-10 whitespace-nowrap border-b border-slate-200 bg-slate-50
+      px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-600;
+  }
+  .data-table tbody td {
+    @apply border-b border-slate-100 px-3 py-2 text-slate-700;
+  }
+  .data-table tbody tr:nth-child(even) {
+    @apply bg-slate-50;
+  }
+  .data-table tbody tr:hover {
+    @apply bg-metro-50;
+  }
+  .num {
+    @apply text-right tabular-nums;
+  }
+
+  /* ---------------- The simulated-data notice ---------------- */
+  .data-notice {
+    @apply border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs
+      text-amber-900 sm:px-6;
+  }
+  .data-notice-inline {
+    @apply rounded-control border border-amber-200 bg-amber-50 px-3 py-2 text-xs
+      text-amber-900;
+  }
+
+  /* ---------------- Skeletons ---------------- */
+  .skeleton {
+    @apply animate-pulse rounded bg-slate-200;
+  }
+}
