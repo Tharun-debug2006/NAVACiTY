@@ -1,3 +1,4 @@
+ HEAD
 # NavaCity Smart City — AI-Based Public Transport Demand & Overcrowding Prediction
 
 > **All data in this project is SIMULATED.**
@@ -867,3 +868,7 @@ cd frontend ; npm run build ; cd ..
 
 *Built for a VTU B.E. Artificial Intelligence & Machine Learning mini-project.
 All data is simulated.*
+=======
+# NAVAcity
+AI-Based Public Transport Demand and Overcrowding Prediction
+5bd4a9cce2c6ffaee78b882b8b58d65ae96ce283
